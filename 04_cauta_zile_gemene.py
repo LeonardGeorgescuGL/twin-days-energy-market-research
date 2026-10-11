@@ -42,8 +42,8 @@ def main():
     id_zi = int(gasite.index[0])
     vector = gasite[[f"f{h}" for h in range(24)]].to_numpy(dtype=float)[0].tolist()
 
-    # filtrele: ce vrem și ce nu vrem în rezultate
-    trebuie, nu_trebuie = [], [models.HasIdCondition(has_id=[id_zi])]   # nu vrem ziua însăși
+    # filtrele: ce vreau și ce nu vreau în rezultate
+    trebuie, nu_trebuie = [], [models.HasIdCondition(has_id=[id_zi])]   # nu vreau ziua însăși
     if args.doar_alte_tari:
         nu_trebuie.append(models.FieldCondition(key="tara", match=models.MatchValue(value=args.tara)))
     if args.luna:

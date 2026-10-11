@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pasul 1b: descarcă și dezarhivează prețurile orare de la Ember (licență CC-BY 4.0)
+# Pasul 1b: descarcare și dezarhivare prețurile orare de la Ember (licență CC-BY 4.0)
 set -e
 
 mkdir -p data

@@ -1,10 +1,10 @@
 """
-Pasul 2: din fișierul orar Ember facem, pentru fiecare țară și fiecare zi,
-o "curbă" de 24 de prețuri (câte unul pe oră). Rezultatul se salvează în
+Pasul 2: din fișierul orar Ember, pentru fiecare țară și fiecare zi,
+se realizeaza o "curbă" de 24 de prețuri (câte unul pe oră). Rezultatul se salvează în
 data/curbe.parquet.
 
 Rulare:   python 02_pregateste_curbe.py
-Dacă nu găsește singur coloanele:
+gasirea coloanele:
           python 02_pregateste_curbe.py --col-tara "Country" --col-timp "Datetime (Local)" --col-pret "Price (EUR/MWhe)"
 """
 import argparse
@@ -13,12 +13,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib
-matplotlib.use("Agg")  # fără fereastră, ca să meargă în WSL
+matplotlib.use("Agg")  # fără fereastră pentru WSL
 import matplotlib.pyplot as plt
 
 
 def gaseste_fisier_compilat(folder):
-    # în zip e un fișier cu toate țările și câte unul pe țară; cel cu toate țările e cel mai mare
+    # un fișier cu toate țările și câte unul pe țară; cel cu toate țările e cel mai mare
     fisiere = sorted(Path(folder).rglob("*.csv"), key=lambda f: f.stat().st_size, reverse=True)
     if not fisiere:
         raise SystemExit(f"Nu am găsit niciun .csv în {folder}. Ai rulat 01_descarca_date.sh?")
@@ -121,7 +121,7 @@ def main():
     else:
         print(f"\nRomânia: {len(ro):,} zile, {ro['data'].min().date()} -> {ro['data'].max().date()}")
 
-    # grafic de verificare: 5 zile din România, ca să vezi cum arată curbele
+    # grafic de verificare: 5 zile din România pentru vizualizare curbe
     Path("grafice").mkdir(exist_ok=True)
     exemple = ro.sample(5, random_state=1)
     for _, r in exemple.iterrows():

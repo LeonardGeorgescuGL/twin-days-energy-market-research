@@ -29,9 +29,9 @@ python 04_cauta_zile_gemene.py --tara Romania --data 2024-04-14 --doar-alte-tari
 python 04_cauta_zile_gemene.py --tara Romania --data 2024-04-14 --luna 4 --an-min 2022
 ```
 
-## Cum verifici că merge
+## Cum verific că merge
 
-| Pas | Ce ar trebui să vezi |
+| Pas | Ce ar trebui să vedem |
 |---|---|
 | 1 | `http://localhost:6333/dashboard` se deschide în browser |
 | 2 | în `data/hourly/` apar fișierele .csv |
@@ -63,4 +63,4 @@ Dacă scriptul 3 nu recunoaște coloanele fișierului, îți arată ce coloane a
 
 - Zilele cu schimbarea orei de primăvară au 23 de ore și sunt eliminate. Zilele cu 25 de ore (toamna) se calculează cu media orelor dublate.
 - Prețurile sunt prețurile spot de pe piața pentru ziua următoare, nu prețurile plătite de consumatori.
-- Sursa: Ember, European Wholesale Electricity Price Data, licență CC-BY 4.0. Trebuie citată în prezentare.
+- Sursa: Ember, European Wholesale Electricity Price Data, licență CC-BY 4.0.
