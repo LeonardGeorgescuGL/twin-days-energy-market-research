@@ -1,0 +1,6 @@
+venv/
+data/
+qdrant_storage/
+qdrant_local/
+__pycache__/
+*.zip
